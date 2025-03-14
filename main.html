@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Sorry messege</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .heart {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.8s ease-in-out;
+            z-index: 2;
+        }
+
+        .heart img {
+            width: 200px;
+            animation: beat 1.5s infinite;
+        }
+
+        .heart.move-upward {
+            transform: translateY(-350px); /* Heart ko aur upar le jaane ke liye */
+        }
+
+        .message {
+            position: absolute;
+            width: 100%;
+            max-width: 1000px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+            visibility: hidden;
+            text-align: center;
+            z-index: 1; /* Ensure message appears above */
+        }
+
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .message h1 {
+            font-family: 'Cinzel', serif;
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .message p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sincere {
+            text-align: center;
+            font-style: italic;
+            color: #d32f2f;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .glow-text {
+            font-size: 2rem;
+            color: #ff1744;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff1744, 0 0 20px #ff1744, 0 0 40px #ff1744;
+            animation: glow 1.5s infinite alternate;
+            position: absolute;
+            bottom: 10%;
+            text-align: center;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff1744; }
+            100% { text-shadow: 0 0 20px #ff1744, 0 0 40px #ff1744; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart" id="heart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Heart-image.png" alt="Heart">
+        </div>
+
+        <div class="message" id="message">
+            <h1>For My Love ❤️</h1>
+            <p>
+                Hey, I love you Toshi ! ❤️<br>
+                Mujhse jo bhi galti hui, uske liye dil se sorry. 💔 Main jaanta hoon ki maine tumhe hurt kiya hai, aur tum mujhse naraaz aur gussa ho. Par yakeen manao, mera irada kabhi bhi tumhe dukh dene ka nahi tha. Tum meri duniya ho, aur tumhari muskurahat aur tumarara awaaz hi meri sabse badi khushi hai.<br>
+                Main apni galti maanne ko tayar hoon aur use sudharne ki poori koshish karunga. Bas galti hone par mujhe maaf kar do, aur wapas apni pyari hasi se tumarari zindagi mere name kar do. Tumhari bina sab kuch adhura sa lagta hai.<br>
+                Choti choti baat per kabhi naraz mat hona .galati agar hojaye toh maaf kar dena .naraz tab hona jab hum rishta thod denge aur aisa tab hoga jab hum duniya chod denge <br>
+                Main hamesha tumse pyaar karta rahunga! 💖🙏</p>
+                Please jo hua usko bhul jao aur firse nayi shuruaat kare. Please Unblock Me Toshi babu 😭</p>
+                Tumhara hi,
+                Priyesh Kumar 💞 </p>
+            <div class="sincere">
+                - Written by Priyesh Kumar ❤️
+            </div>
+        </div>
+
+        <div class="glow-text">
+            Love you yaar! 🥰💕
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("heart").addEventListener("click", function() {
+            document.getElementById("message").classList.add("show");
+            this.classList.add("move-upward");
+        });
+    </script>
+
+</body>
+</html>
